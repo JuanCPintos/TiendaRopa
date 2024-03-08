@@ -7,7 +7,8 @@ const hbs = require('hbs');
 
 const app = express();
 
-const userRouter = require('./routes/userRoutes');
+// const userRouter = require('./routes/userRoutes');
+const productRouter = require('./routes/productRouter');
 
 app.use(cors());
 app.use(morgan('dev'));
@@ -17,13 +18,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/user', userRouter);
-
 app.set('view engine', 'hbs');
 
 app.set('views', path.join(__dirname, 'views'));
 
 hbs.registerPartials(path.join(__dirname, 'views', 'partials'));
+
+app.use('/products', productRouter);
+// app.use('/products', productRouter);
 
 app.get('/', (req, res) => {
   res.render('index');

@@ -4,7 +4,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 const PORT = process.env.PORT || 3000;
 
-require('./database/connection');
+// const connection = require('./database/connection');
 
 const server = app.listen(PORT, () => {
     console.log(`Server running on port http://localhost:${PORT}`);
