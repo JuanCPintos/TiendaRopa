@@ -18,4 +18,6 @@ router.get('/', listProducts);
 
 router.post('/', addProducts);
 
+// router.put('/{id}', )
+
 module.exports = router;

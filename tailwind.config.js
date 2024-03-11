@@ -7,7 +7,7 @@ module.exports = {
         "./views/partials/nav.hbs",
         "./views/partials/footer.hbs",
         "./views/partials/cardCategory.hbs",
-        "./views/partials/products.hbs",
+        "./views/products.hbs",
     ],
     theme: {
         extend:{

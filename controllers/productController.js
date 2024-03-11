@@ -27,20 +27,23 @@ const addProducts = async (req, res) => {
     }
 }
 
-const listProducts = (req, res) => {
-    // try {
-    //     await client.connect();
-    //     const database = client.db('tienda');
-    //     const collection = database.collection('productos');
-    //     const result = await collection.find({}).toArray();
-    //     res.json(result);
-    // } catch (error) {
-    //     res.json({error: error.message});
-    // }
-    res.render('products');
+const listProducts = async (req, res) => {
+    try {
+        await client.connect();
+        const database = client.db('tienda');
+        const collection = database.collection('productos');
+        const result = await collection.find({}).toArray();
+
+        res.render('products', {products: result});
+        // res.json(result);
+    } catch (error) {
+        res.json({error: error.message});
+    }
 };
 
-const updateProducts = (req, res) => {};
+const updateProducts = (req, res) => {
+
+};
 
 const deleteProducts = (req, res) => {};
 
