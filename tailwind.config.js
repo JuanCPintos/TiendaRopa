@@ -8,6 +8,8 @@ module.exports = {
         "./views/partials/footer.hbs",
         "./views/partials/cardCategory.hbs",
         "./views/products.hbs",
+        "./views/edit.hbs",
+        "./views/delete.hbs",
     ],
     theme: {
         extend:{

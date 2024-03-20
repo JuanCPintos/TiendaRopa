@@ -12,11 +12,25 @@ const {
     // metodos de controller de prodcutos
     listProducts,
     addProducts,
+    getProduct,
+    updateProducts,
+    deleteProduct,
+    destroyProduct
 } = require('../controllers/productController');
 
 router.get('/', listProducts);
 
 router.post('/', addProducts);
+
+router.get('/edit/:id', getProduct);
+
+router.post('/edit/:id', updateProducts);
+
+router.get('/delete/:id', deleteProduct);
+
+router.post('/delete/:id', destroyProduct);
+
+
 
 // router.put('/{id}', )
 

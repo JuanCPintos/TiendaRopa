@@ -1,0 +1,49 @@
+<div class=" px-72">
+    <h1 class="text-2xl font-bold mb-4">Eliminar Producto</h1>
+    
+
+    {{#if success}}
+        <div class="w-full bg-green-400 text-white shadow-lg font-bold py-2 px-4 rounded">
+            <p>Se elimino con exito</p>
+        </div>
+    
+
+    {{else}}
+
+        {{#if error}}
+            <div class="w-full bg-red-400 text-white shadow-lg font-bold py-2 px-4 rounded">
+                <p>No se pudo realizar la eliminación</p>
+            </div>
+        {{/if}}
+
+        <form action="/products/delete/{{product._id}}" method="POST">
+            <input type="hidden" name="_method" value="DELETE">
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="name">Nombre</label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" name="name" value="{{product.name}}">
+            </div>
+            {{!-- <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="description">Descripción</label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="description" type="text" name="description" value="{{product.description}}">
+            </div> --}}
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="price">Precio</label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="price" type="text" name="price" value="{{product.price}}">
+            </div>
+            <div>
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="stock">Stock</label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="stock" type="text" name="stock" value="{{product.stock}}">
+            </div>
+            <div class="flex items-center justify-between">
+                <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                    Eliminar
+                </button>
+            </div>
+            
+        </form>
+
+
+    {{/if}}
+
+
+</div>

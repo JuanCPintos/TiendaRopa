@@ -1,6 +1,8 @@
-<div class="pt-32">
+<div class="">
     <p>aqui renderizamos los Productos</p>
     {{>form}}
+
+    
 
     <div class="flex flex-wrap">
         {{#each products}}
@@ -9,7 +11,12 @@
                     <h2 class="text-xl font-semibold">{{name}}</h2>
                     <p class="text-gray-700">{{description}}</p>
                     <p class="text-gray-700">{{price}}</p>
-                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Comprar</button>
+                    <p class="text-gray-700">El id es: {{_id}}</p>
+                    <div class="flex gap-3 flex-wrap pt-3">
+                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Comprar</button>
+                        <a href="/products/edit/{{_id}}" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Editar</a>
+                        <a href="/products/delete/{{_id}}" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" >Eliminar</a>
+                    </div>
                 </div>
             </div>
         {{/each}}

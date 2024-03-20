@@ -1,22 +1,38 @@
-<nav class="w-full fixed bg-teal-300">
+<nav class="h-32 w-full fixed bg-[#C6E2E9]">
     <div class="">
-        <div class="h-16 p-4 content-center">
+        <div class="p-4 content-center">
             <div class="flex justify-evenly content-center">
-                <div class="border basis-1/4">
-                    <input type="text" placeholder="Buscar">
+                <div class="m-1 border border-slate-50 basis-1/4 rounded-lg p-2 focus-within:border-[#F1FFC4]">
+                    <div class="flex gap-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgb(248, 250, 252, 1);transform: ;msFilter:;">
+                            <path d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z">
+                            </path>
+                        </svg>
+                        
+                        <input type="text" placeholder="Buscar" class="bg-transparent placeholder-slate-50 outline-none">
+                    </div>
                 </div>
-                <div class="border basis-1/4">
-                    <p class="w-auto">LOGO</p>
+                <div class="basis-1/4 flex justify-center content-center">
+                    {{!-- <p class="w-auto">LOGO</p> --}}
+                    <div class="w-32">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Ford_logo.svg/2560px-Ford_logo.svg.png" alt="Logo de la tienda">
+                    </div>
                 </div>
-                <div class="border basis-1/4">
-                    <p class="w-auto">carrito-ico</p>
+                <div class="basis-1/4 flex flex-row-reverse">
+                    {{!-- <p class="w-auto">carrito-ico</p> --}}
+                    <a href="/">
+                        <svg class="w-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="fill: rgb(248, 250, 252, 1);transform: ;msFilter:;"><path d="M21.822 7.431A1 1 0 0 0 21 7H7.333L6.179 4.23A1.994 1.994 0 0 0 4.333 3H2v2h2.333l4.744 11.385A1 1 0 0 0 10 17h8c.417 0 .79-.259.937-.648l3-8a1 1 0 0 0-.115-.921zM17.307 15h-6.64l-2.5-6h11.39l-2.25 6z"></path><circle cx="10.5" cy="19.5" r="1.5"></circle><circle cx="17.5" cy="19.5" r="1.5"></circle></svg>
+                    </a>
                 </div>
             </div>
+        </div>
+        <div class="px-12">
+            <hr class="border-slate-50">
         </div>
         <div class="p-4">
             <ul class="flex w-full justify-center gap-12">
                 <li><a href="/">Inicio</a></li>
-                <li><a href="products">Productos</a></li>
+                <li><a href="/products">Productos</a></li>
                 <li><a href="#contacts">Contacto</a></li>
                 {{!-- <li><a href="#">Nosotros</a></li> --}}
             </ul>

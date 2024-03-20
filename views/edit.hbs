@@ -1,0 +1,46 @@
+<div class=" px-72">
+    <h1 class="text-2xl font-bold mb-4">Editar Producto</h1>
+    
+
+        <!-- mensaje.handlebars -->
+    <div class="mx-72">
+        {{#if success}}
+            <div class="w-full bg-green-400 text-white shadow-lg font-bold py-2 px-4 rounded">
+                <p>Cambios guardados con exito</p>
+            </div>
+        {{/if}}
+
+        {{#if error}}
+            <div class="w-full bg-red-400 text-white shadow-lg font-bold py-2 px-4 rounded">
+                <p>Debe actualizar algun campo antes de guardar.</p>
+            </div>
+        {{/if}}
+    </div>
+
+
+    <form action="/products/edit/{{product._id}}" method="POST">
+        <input type="hidden" name="_method" value="PUT">
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="name">Nombre</label>
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" name="name" value="{{product.name}}">
+        </div>
+        {{!-- <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="description">Descripción</label>
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="description" type="text" name="description" value="{{product.description}}">
+        </div> --}}
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="price">Precio</label>
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="price" type="text" name="price" value="{{product.price}}">
+        </div>
+        <div>
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="stock">Stock</label>
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="stock" type="text" name="stock" value="{{product.stock}}">
+        </div>
+        <div class="flex items-center justify-between">
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                Guardar
+            </button>
+        </div>
+        
+    </form>
+</div>
